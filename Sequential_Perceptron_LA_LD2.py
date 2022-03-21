@@ -41,23 +41,14 @@ it = 0
 for j in range(0,3):
     print("___Epoch___", j+1)
     for i in range(0,c):
-        print()
-        print()
         it = it+1
-        print("***___it: ", it)
-        print("___a: ", a)
-        print("___y: ", y[:,i])
-        
         g = np.dot(a.transpose(),y[:,i])
-        print("___g: ", g)
-        #print("***yi: ", y[:,i])
-        print("___w: ", w_[i])
-        
+
         if ((g > 0) and (w_[i] == -1)) or  ((g <= 0) and (w_[i] == 1)):
             temp1 = (lr*w_[i])*y[:,i]
-            #print("tempppp____", temp1)
             a = np.add(a, temp1)
-        print("___a: ", a)
+    print("a: ", a)
+
    
 print()    
 print("new a: ", a)
