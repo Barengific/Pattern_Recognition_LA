@@ -2,7 +2,7 @@
 # linear discriminant function, dichotomizer,
 # using SEQUENTIAL perceptron learning algorithm
 # with augmented notation and sample normalisation
-# Learning is done after each data point is misclassified
+# squential learning is done after each data point is misclassified
 
 
 # data set
