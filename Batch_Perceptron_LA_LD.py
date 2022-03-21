@@ -2,7 +2,7 @@
 # linear discriminant function, dichotomizer,
 # using batch perceptron learning algorithm
 # with augmented notation and sample normalisation
-# learning is done after each epoch
+# batch - learning is done after each epoch
 # 
 
 # data set
