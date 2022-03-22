@@ -42,5 +42,4 @@ for i in range(0,7):
     t_y = 0
     temp1 = 0
 
-
 print()
