@@ -27,25 +27,37 @@ g = ''
 
 it = 0
 
-nu = [[1.0, 0.0],
+nu = np.array([[1.0, 0.0],
                [2.0, 0.0],
                [2.0, 0.0],
                [3.0, 0.0],
-               [3.0, 0.0]]
+               [3.0, 0.0]])
 
 for i in range(0,c):
-    it = it+1
-    print("[it: ", it)
+    # it = it+1
+    # print("[it: ", it)
     dist = np.linalg.norm(x - y[:,i])
     nu[i][1] = dist
-    print(dist)
+    #print(dist)
     
-dtype = [('class', float), ('val', float)]
-a = np.array(nu, dtype=dtype)     
-   
-print(a) 
-print()    
-print(nu)
+order = np.argsort(nu[:, 1])[::1]
+resOrder = nu[order, :]
+print(resOrder)    
+
+# when k = 1
+resK1 = resOrder[:k1,0]
+# print("k1: ", resK1)
+values, counts = np.unique(resK1[:], return_counts=True)
+ind = np.argmax(counts)
+print("k1: ", values[ind]) 
+
+
+# when k = 3
+resK1 = resOrder[:k3,0]
+# print("k1: ", resK1)
+values, counts = np.unique(resK1[:], return_counts=True)
+ind = np.argmax(counts)
+print("k3: ", values[ind]) 
 
 
 
