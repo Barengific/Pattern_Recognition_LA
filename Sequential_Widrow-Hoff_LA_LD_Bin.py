@@ -33,8 +33,6 @@ y = np.array([[1,1,1,-1,-1,-1],
 # misclassified if, g(x) and w are not on the same positive or negative spectrum
 # ie. both on the postive or both on negative
 
-w_ = np.array([1,1,1,-1,-1,-1])
-
 r,c = y.shape
 g = ''
 
@@ -48,10 +46,9 @@ for j in range(0,10):
         print("a: ", a)
         print("y: ", y[:,i])          
         g = np.dot(a.transpose(),y[:,i])
-        print("#g: ", g)
-        print("w: ", w_[i]) 
+        print("g: ", g)
         
-        temp1 = (lr*y[:,i])*(-1)
+        temp1 = lr*(b[i]-g)*y[:,i]
         a = np.add(a, temp1)
         
     print("")
